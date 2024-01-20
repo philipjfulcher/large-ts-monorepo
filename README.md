@@ -1,5 +1,5 @@
 # 🔥🔥🔥 Nx+TypeScript Benchmark (Batch Mode = Project Refs + Incremental Builds) 🏎️🏎️🏎️
-
+A change!
 ![benchmark](./assets/ts-benchmark.gif)
 
 This repo compares two modes of running the `@nx/js:tsc` executor: the regular one and the batch one. The batch implementation, apart from running multiple tasks in a single process, also creates the required [TypeScript project references](https://www.typescriptlang.org/docs/handbook/project-references.html) on the fly to perform incremental builds.

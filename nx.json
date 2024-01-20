@@ -19,7 +19,7 @@
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": ["default"],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/README.md"]
   },
   "workspaceLayout": {
     "appsDir": "packages",
