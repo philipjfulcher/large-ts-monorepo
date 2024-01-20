@@ -1,6 +1,6 @@
 launch-templates:
   my-custom-medium:
-    resourceClass: "docker_linux_amd64/medium"
+    resourceClass: 'docker_linux_amd64/medium'
     image: 'ubuntu22.04-node20.9-v1'
     init-steps:
       - name: checkout repo
@@ -15,3 +15,35 @@ launch-templates:
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/install-node-modules/main.yaml'
       - name: Test a custom script
         script: echo "This is my custom medium agent"
+  my-custom-small:
+    resourceClass: 'docker_linux_amd64/small'
+    image: 'ubuntu22.04-node20.9-v1'
+    init-steps:
+      - name: checkout repo
+        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
+      - name: node_modules cache
+        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
+        env:
+          KEY: 'package-lock.json|yarn.lock|pnpm-lock.yaml'
+          PATHS: 'node_modules'
+          BASE_BRANCH: 'main'
+      - name: NPM Install
+        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/install-node-modules/main.yaml'
+      - name: Test a custom script
+        script: echo "This is my custom small agent"
+  my-custom-large:
+    resourceClass: 'docker_linux_amd64/large'
+    image: 'ubuntu22.04-node20.9-v1'
+    init-steps:
+      - name: checkout repo
+        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
+      - name: node_modules cache
+        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
+        env:
+          KEY: 'package-lock.json|yarn.lock|pnpm-lock.yaml'
+          PATHS: 'node_modules'
+          BASE_BRANCH: 'main'
+      - name: NPM Install
+        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/install-node-modules/main.yaml'
+      - name: Test a custom script
+        script: echo "This is my custom large agent"
