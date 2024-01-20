@@ -5,16 +5,9 @@ on:
       - main
   pull_request:
 
-env:
-  NX_CLOUD_DISTRIBUTED_EXECUTION: true # this enables DTE
-  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 10 # expected number of agents
-  NX_BRANCH: ${{ github.event.number || github.ref_name }}
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # this is needed if our pipeline publishes to npm
-
 jobs:
   main:
-    name: Nx Cloud - Main Job
+    name: Nx Cloud - Build on Small Agents
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -50,14 +43,14 @@ jobs:
         run: git branch --track main origin/main
 
       - name: Start CI run
-        run: npx nx-cloud start-ci-run --distributes-on=".nx/workflows/dynamic-changesets.yaml"
+        run: npx nx-cloud start-ci-run --distributes-on="10 my-custom-small"
 
       - name: Run commands in parallel
         run: |
           pids=()
 
           # list of commands to be run on agents
-          npx nx run-many -t build --parallel=3 &
+          npx nx run-many -t build --parallel=2 &
           pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
