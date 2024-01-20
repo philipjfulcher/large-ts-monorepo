@@ -14,9 +14,9 @@ launch-templates:
           BASE_BRANCH: 'main'
 
       - name: corepack enable
-        run: corepack enable
+        script: corepack enable
 
       - name: yarn
-        run: yarn --immutable
+        script: yarn --immutable
 
 
