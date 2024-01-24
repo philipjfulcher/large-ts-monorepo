@@ -35,6 +35,8 @@ launch-templates:
     resourceClass: 'docker_linux_amd64/large'
     image: 'ubuntu22.04-node20.9-v1'
     init-steps:
+      - name: bad template step
+        uses: 'a bad path!'
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
       - name: node_modules cache
