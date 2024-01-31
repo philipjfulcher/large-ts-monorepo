@@ -3,7 +3,7 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"],
+      "inputs": ["production", "^production",{ "runtime": "node -v" }],
       "cache": true
     },
     "lint": {
