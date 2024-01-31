@@ -3,7 +3,7 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"],
+      "inputs": ["production", "^production",{ "runtime": "node -v" }],
       "cache": true
     },
     "lint": {
@@ -19,7 +19,7 @@
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": ["default"],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/README.md"]
   },
   "workspaceLayout": {
     "appsDir": "packages",

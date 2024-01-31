@@ -1,0 +1,4 @@
+distributes-on:
+  small-changeset: 1 my-custom-small
+  medium-changeset: 5 my-custom-medium
+  large-changeset: 10 my-custom-large
