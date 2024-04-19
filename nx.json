@@ -19,10 +19,12 @@
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": ["default"],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yaml"]
   },
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"
-  }
+  },
+  "nxCloudAccessToken": "NzliYzQ0NDctNjg0MS00MDIxLWIxNWUtMWI5ZWU4MDQ1OTdifHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "https://staging.nx.app"
 }
