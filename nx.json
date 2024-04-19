@@ -24,7 +24,5 @@
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"
-  },
-  "nxCloudAccessToken": "ZjlhZjY4ZjktNDM3Ni00ZmFlLWE0YzMtY2ZlZjk1ZjJhOGIyfHJlYWQtd3JpdGU=",
-  "nxCloudUrl": "https://staging.nx.app"
+  }
 }
