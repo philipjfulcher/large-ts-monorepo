@@ -38,4 +38,4 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
 
       - run: npx nx-cloud record -- nx format:check
-      - run: npx nx run-many -t build
+      - run: npx nx run-many -t build --parallel 4
